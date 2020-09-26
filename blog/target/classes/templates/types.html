@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 
 <head th:replace="_fragments :: head(~{::title})">
   <title>分类</title>
@@ -36,14 +36,14 @@
         <div class="ui padded vertical segment m-padded-tb-large" th:each="blog : ${pageInfo.list}">
           <div class="ui middle aligned mobile reversed stackable grid">
             <div class="eleven wide column">
-              <h3 class="ui header" ><a href="#" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank" class="m-black" th:text="${blog.title}">你真的理解什么是财富自由吗?</a></h3>
-              <p class="m-text" th:text="|${blog.description}......|">正确做好任何一件事情的前提是清晰、正确的理解目标。而事实是，我们很多人很多时候根本没有对目标正确的定义，甚至根本从来就没有想过，只是大家都那么做而已…...</p>
+              <h3 class="ui header" ><a href="#" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank" class="m-black" th:text="${blog.title}">学习首先需要的是勤奋，一种持之以恒的精神！</a></h3>
+              <p class="m-text" th:text="|${blog.description}......|">不是所有勤奋的人都能成功，但bai是成功的人百分之九十九都是勤奋的。其次，铭记“学而不思则罔，思而不学则殆”，学习时要伴随着思考，否则学完就忘了。学习的最终目的，乃是运用知识，运用知识时是一件充满快乐自豪的事，要通过自己的知识创造价值，否则拥有再多的知识也只能是一本活字典。</p>
               <div class="ui grid">
                 <div class="eleven wide column">
                   <div class="ui mini horizontal link list">
                     <div class="item">
                       <img src="https://unsplash.it/100/100?image=1005" th:src="@{${blog.user.avatar}}" alt="" class="ui avatar image">
-                      <div class="content"><a href="#" class="header" th:text="${blog.user.nickname}" >朱一鸣</a></div>
+                      <div class="content"><a href="#" class="header" th:text="${blog.user.nickname}" >方邦明</a></div>
                     </div>
                     <div class="item">
                       <i class="calendar icon"></i><span th:text="${#dates.format(blog.updateTime, 'yyyy-MM-dd')}">2020-3-02</span>

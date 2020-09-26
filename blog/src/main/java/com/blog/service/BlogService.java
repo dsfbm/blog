@@ -30,7 +30,7 @@ public interface BlogService {
     int saveBlog(Blog blog);
 
     int updateBlog(Blog blog);
-
+    void updateViews(Long id ,Integer views);  //浏览次数
     int deleteBlog(Long id);
 
     List<Blog> searchAllBlog(Blog blog);  //后台根据标题、分类、推荐搜索博客

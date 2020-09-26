@@ -120,6 +120,11 @@ public class BlogServiceImpl implements BlogService {
     }
 
     @Override
+    public void updateViews(Long id,Integer views) {
+        blogDao.updateViews(id,views);
+    }
+
+    @Override
     public int deleteBlog(Long id) {
         return blogDao.deleteBlog(id);
     }

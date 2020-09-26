@@ -40,6 +40,8 @@ public interface BlogDao {
 
     int updateBlog(Blog blog);
 
+    void updateViews(Long id, Integer views);
+
     int deleteBlog(Long id);
 
 }

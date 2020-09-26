@@ -1,40 +1,45 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head th:fragment="head(title)">   <!--title为传参-->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title th:replace="${title}">博客详情</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css">
+<!--  <link rel="stylesheet" href="../static/Semantic-UI-1.12.2/dist/semantic.css" th:href="@{/Semantic-UI-1.12.2/dist/semantic.css}">-->
   <link rel="stylesheet" href="../static/css/typo.css" th:href="@{/css/typo.css}">
   <link rel="stylesheet" href="../static/css/animate.css" th:href="@{/css/animate.css}">
   <link rel="stylesheet" href="../static/lib/prism/prism.css" th:href="@{/lib/prism/prism.css}">
   <link rel="stylesheet" href="../static/lib/tocbot/tocbot.css" th:href="@{/lib/tocbot/tocbot.css}">
   <link rel="stylesheet" href="../static/css/me.css" th:href="@{/css/me.css}">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+<!--  <link rel="stylesheet" href="../static/ui/font-awesome.min.css">-->
   <script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
 </head>
 
 <body>
 
 <!--头部导航-->
-<nav th:fragment="menu(n)" class="ui attached segment m-padded-tb-mini m-shadow-small" >
+<nav th:fragment="menu(n)" class="ui inverted attached segment m-padded-tb-mini m-shadow-small" >
+<!--<nav th:fragment="menu(n)" class="ui attached segment m-padded-tb-mini m-shadow-small" >-->
   <div class="ui container">
-    <div class="ui secondary stackable menu">
-      <h1 class="ui pink header item">君の名は</h1>
+    <div class="ui inverted secondary stackable menu">
+<!--    <div class="ui secondary stackable menu">-->
+      <h1 class="ui blue header item">Fbm_执著</h1>
       <a href="#" th:href="@{/}" class="m-item item blue m-mobile-hide" th:classappend="${n==1}?'active'"><i class=" home icon"></i>首页</a>
       <a href="#" th:href="@{/types/-1}" class="m-item violet item m-mobile-hide" th:classappend="${n==2}?'active'"><i class=" idea icon"></i>分类</a>
       <a href="#" th:href="@{/tags/-1}" class="m-item pink item m-mobile-hide" th:classappend="${n==3}?'active'"><i class=" tags icon"></i>标签</a>
       <a href="#" th:href="@{/archives}"class="m-item orange item m-mobile-hide" th:classappend="${n==4}?'active'"><i class=" clone icon"></i>时间线</a>
       <a href="#" th:href="@{/about}"class="m-item green item m-mobile-hide" th:classappend="${n==5}?'active'"><i class=" info icon"></i>关于我</a>
+      <a href="#" th:href="@{/admin}" class="m-item blue item m-mobile-hide" th:classappend="${n==6}?'active'"><i class=" user icon"></i>后台管理</a>
       <div class="right m-item item m-mobile-hide">
         <form name="search" action="#" method="post" th:action="@{/search}" target="_blank">
-          <div class="ui icon  transparent input m-margin-tb-tiny">
+          <div class="ui icon input m-margin-tb-tiny">
             <input type="text" name="query" placeholder="Search...." th:value="${query}">
             <i onclick="document.forms['search'].submit()" class="search link icon"></i>
           </div>
         </form>
       </div>
+
     </div>
   </div>
   <a href="#" class="ui menu toggle black icon button m-right-top m-mobile-show">
@@ -63,17 +68,21 @@
       <div class="three wide column">
         <h4 class="ui inverted header m-text-thin m-text-spaced ">联系我</h4>
         <div class="ui inverted link list">
-          <a href="#" class="item m-text-thin">Email：691639910@qq.com</a>
-          <a href="#" class="item m-text-thin">QQ：691639910</a>
+          <a href="#" class="item m-text-thin">Email：632834571@qq.com</a>
+          <a href="#" class="item m-text-thin">QQ：632834571</a>
         </div>
       </div>
 
       <div class="ten wide column">
-        <h4 class="ui inverted header m-text-thin m-text-spaced ">临江仙·梦后楼台高锁</h4>
+        <h4 class="ui inverted header m-text-thin m-text-spaced ">你迟到了好多年，可我依旧为你的到来而感到高兴。
+
+          <br>You've been late for many years, but I'm still happy for your coming.</h4>
         <p class="m-text-thin m-text-spaced m-opacity-mini">
-          梦后楼台高锁，酒醒帘幕低垂。去年春恨却来时。落花人独立，微雨燕双飞。</p>
+          日子甜甜的，像清晨的柠檬水，像初冬的太阳，像梦里的大海，像第一次遇见你。
+        </p>
         <p class="m-text-thin m-text-spaced m-opacity-mini">
-          记得小苹初见，两重心字罗衣。琵琶弦上说相思。当时明月在，曾照彩云归。</p>
+          很喜欢人与人刚遇见的那个时候，彼此都对对方充满了好奇，但我也很羡慕那些一起熬过了不愉快的时间，还能如初的人们。
+        </p>
       </div>
     </div>
     <div class="ui inverted section divider"></div>
@@ -86,6 +95,8 @@
 <th:block th:fragment="script">
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
+<!--  <script src="../static/Semantic-UI-1.12.2/dist/semantic.css" th:src="@{/Semantic-UI-1.12.2/dist/semantic.css}"></script>-->
+
   <script src="//cdn.jsdelivr.net/npm/jquery.scrollto@2.1.2/jquery.scrollTo.min.js"></script>
 
   <script src="../static/lib/prism/prism.js" th:src="@{/lib/prism/prism.js}"></script>
